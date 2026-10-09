@@ -1,0 +1,6 @@
+# Block hidden files and project-only folders (only matters on Apache / XAMPP)
+RedirectMatch 404 /\.(?!well-known)
+RedirectMatch 404 ^/.*/(sql|server|api/inc|api/storage)(/|$)
+<FilesMatch "\.(md|sql|properties|log)$">
+  Require all denied
+</FilesMatch>

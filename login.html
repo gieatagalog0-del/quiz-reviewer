@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in | College Quiz Reviewer</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="login">
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <a class="brand" href="index.html">College Quiz Reviewer</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#subjects">Subjects</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="upload.html">Upload Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Log in</h1>
+      <p>Use your account to see and upload class quizzes.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel auth-panel">
+      <form id="login-form" novalidate>
+        <label class="field-label" for="email">Gmail address</label>
+        <input class="text-input" type="email" id="email" autocomplete="email" placeholder="yourname@gmail.com" required>
+        <label class="field-label" for="password">Password</label>
+        <input class="text-input" type="password" id="password" autocomplete="current-password" required>
+        <button type="submit" class="btn btn-primary" id="submit-btn">Log in</button>
+      </form>
+      <div id="status" class="status hidden" role="status" aria-live="polite"></div>
+      <p class="auth-links">No account yet? <a href="register.html">Register here</a></p>
+    </section>
+  </main>
+
+  <footer>College Quiz Reviewer &middot; Application Development Project</footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Upload a Quiz | College Quiz Reviewer</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <a class="brand" href="index.html">College Quiz Reviewer</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#subjects">Subjects</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="upload.html">Upload Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Class quizzes</h1>
+      <p>Upload a Word (.docx) file. The reviewer reads it, builds the quiz, and shares it with the whole class.</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section id="gate" class="panel hidden">
+      <h2>Please log in</h2>
+      <p>You need an account to see and upload the class quizzes.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="login.html">Log in</a>
+        <a class="btn btn-secondary" href="register.html">Register</a>
+      </div>
+    </section>
+
+    <div id="app" class="hidden">
+
+      <section id="uploader" class="panel" aria-labelledby="upload-h">
+        <h2 id="upload-h">1. Choose a Word file</h2>
+        <label class="drop-zone" id="drop-zone" for="file-input">
+          <strong>Choose a .docx file</strong>
+          <span>or drag and drop it here (up to 5 MB)</span>
+          <input type="file" id="file-input" accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+        </label>
+
+        <div id="upload-status" class="status hidden" role="status" aria-live="polite"></div>
+
+        <div id="preview" class="preview hidden">
+          <h3>2. Check the questions and save</h3>
+          <label class="field-label" for="quiz-title">Quiz title</label>
+          <input type="text" id="quiz-title" class="text-input" maxlength="80">
+          <p id="missing-note" class="section-sub"></p>
+          <div id="preview-list"></div>
+          <div class="btn-row">
+            <button type="button" class="btn btn-primary" id="save-btn">Share with the class</button>
+            <button type="button" class="btn btn-secondary" id="cancel-btn">Cancel</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="guide" class="panel" aria-labelledby="format-h">
+        <h2 id="format-h">How to write the Word file</h2>
+        <p>Type your questions in Word like this, then save as <strong>.docx</strong> (File &gt; Save As &gt; Word Document). Do not use the old .doc format.</p>
+<pre><code>1. Which device forwards packets between networks?
+A. Hub
+B. Switch
+C. Router
+D. Modem
+Answer: C
+Explanation: A router uses IP addresses to connect networks.
+
+2. Which topology uses a central switch?
+A. Bus
+B. Star
+C. Ring
+D. Mesh
+Answer: B</code></pre>
+        <ul>
+          <li>Each question has <strong>exactly 4 choices</strong>, A to D, one per line.</li>
+          <li>Number the questions (1. 2. 3. or Q1.) so they are easy to tell apart.</li>
+          <li>Show the correct answer in <em>any one</em> of these ways: an <code>Answer: C</code> line; an answer key at the end (<code>Answer Key</code> then <code>1. C</code>, <code>2. B</code> ...); making the correct choice <strong>bold</strong>, underlined, or highlighted; or putting <code>*</code> after it.</li>
+          <li><code>Explanation:</code> is optional. Keep it in one paragraph.</li>
+          <li>If something cannot be understood, you will see a warning and can fix the answer in the preview before saving.</li>
+        </ul>
+      </section>
+
+      <section class="panel" aria-labelledby="saved-h">
+        <h2 id="saved-h">Shared quizzes</h2>
+        <p id="role-note" class="section-sub"></p>
+        <p id="saved-empty" class="section-sub hidden">No quizzes have been shared yet.</p>
+        <div id="saved-list"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>College Quiz Reviewer &middot; Application Development Project</footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/upload.js"></script>
+</body>
+</html>

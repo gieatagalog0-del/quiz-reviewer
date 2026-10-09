@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verify email | College Quiz Reviewer</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="verify">
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <a class="brand" href="index.html">College Quiz Reviewer</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#subjects">Subjects</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="upload.html">Upload Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Verify your email</h1>
+      <p>Enter the 6-digit code we sent to your Gmail. It expires in 10 minutes.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel auth-panel">
+      <form id="verify-form" novalidate>
+        <label class="field-label" for="email">Gmail address</label>
+        <input class="text-input" type="email" id="email" autocomplete="email" placeholder="yourname@gmail.com" required>
+        <label class="field-label" for="code">Verification code</label>
+        <input class="text-input otp-input" type="text" id="code" inputmode="numeric" maxlength="6" autocomplete="one-time-code" placeholder="000000" required>
+        <button type="submit" class="btn btn-primary" id="verify-btn">Verify</button>
+      </form>
+      <div style="margin-top:.75rem"><button type="button" class="btn btn-secondary" id="resend-btn">Resend code</button></div>
+      <div id="status" class="status hidden" role="status" aria-live="polite"></div>
+      <p class="auth-links">Cannot find the email? Check your spam folder. <a href="login.html">Back to log in</a></p>
+    </section>
+  </main>
+
+  <footer>College Quiz Reviewer &middot; Application Development Project</footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

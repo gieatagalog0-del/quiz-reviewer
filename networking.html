@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Networking | College Quiz Reviewer</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-subject="networking">
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <a class="brand" href="index.html">College Quiz Reviewer</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#subjects" class="active">Subjects</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="upload.html">Upload Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Networking</h1>
+      <p>Understand how computers connect and communicate, from cables and addresses to protocols.</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= REVIEWER ================= -->
+    <section id="reviewer-view">
+      <div class="container reviewer-layout">
+        <aside class="toc" aria-label="Topics">
+          <h2>Topics</h2>
+          <ul>
+            <li><a href="#basics">Networking fundamentals</a></li>
+            <li><a href="#topologies">Network topologies</a></li>
+            <li><a href="#models">OSI and TCP/IP models</a></li>
+            <li><a href="#ip">IP addresses and classes</a></li>
+            <li><a href="#devices">Network devices</a></li>
+            <li><a href="#protocols">TCP and UDP</a></li>
+            <li><a href="#types">LAN, MAN, and WAN</a></li>
+            <li><a href="#troubleshooting">Communication and troubleshooting</a></li>
+          </ul>
+        </aside>
+        <div>
+          <section class="topic" id="overview">
+            <h2>Subject overview</h2>
+            <p>Networking explains how computers and devices connect and exchange data, from your home Wi-Fi to the Internet. You will learn the layouts, rules (protocols), addresses, and devices that make communication possible.</p>
+          </section>
+
+          <section class="topic" id="basics">
+            <h2>Fundamentals of computer networking</h2>
+            <p>A <strong>network</strong> is a group of connected devices that share data and resources such as files, printers, and Internet access.</p>
+            <ul>
+              <li><strong>Node:</strong> any device on the network (computer, phone, printer).</li>
+              <li><strong>Protocol:</strong> a set of rules for communication (HTTP, TCP, IP).</li>
+              <li><strong>Bandwidth:</strong> how much data can be sent per second.</li>
+              <li><strong>Client and server:</strong> a client requests a service and a server provides it.</li>
+            </ul>
+          </section>
+
+          <section class="topic" id="topologies">
+            <h2>Network topologies</h2>
+            <p>A <strong>topology</strong> is the layout of how devices are connected.</p>
+            <div class="table-wrap"><table>
+              <tr><th>Topology</th><th>Description</th><th>Advantage</th><th>Disadvantage</th></tr>
+              <tr><td>Bus</td><td>All devices share one main cable.</td><td>Cheap and simple</td><td>One cable break can stop the whole network</td></tr>
+              <tr><td>Star</td><td>All devices connect to a central switch or hub.</td><td>Easy to manage; one failed cable affects one device</td><td>The central device is a single point of failure</td></tr>
+              <tr><td>Ring</td><td>Each device connects to two neighbors in a loop.</td><td>Orderly data flow</td><td>A break can disrupt the ring</td></tr>
+              <tr><td>Mesh</td><td>Devices connect to many others.</td><td>Very reliable</td><td>Expensive and complex</td></tr>
+              <tr><td>Hybrid</td><td>A combination of two or more topologies.</td><td>Flexible</td><td>Complex design</td></tr>
+            </table></div>
+            <div class="remember"><strong>Remember:</strong> Most modern LANs use a star topology with a switch.</div>
+          </section>
+
+          <section class="topic" id="models">
+            <h2>OSI and TCP/IP models</h2>
+            <p>Layered models split communication into smaller jobs so that each layer can focus on one task.</p>
+            <div class="table-wrap"><table>
+              <tr><th>OSI layer</th><th>Main job</th><th>Examples</th></tr>
+              <tr><td>7 Application</td><td>Network services for apps</td><td>HTTP, FTP, SMTP, DNS</td></tr>
+              <tr><td>6 Presentation</td><td>Data format, encryption, compression</td><td>TLS, JPEG</td></tr>
+              <tr><td>5 Session</td><td>Start, manage, and end sessions</td><td>Session control</td></tr>
+              <tr><td>4 Transport</td><td>End-to-end delivery, ports</td><td>TCP, UDP</td></tr>
+              <tr><td>3 Network</td><td>Logical addressing and routing</td><td>IP, routers</td></tr>
+              <tr><td>2 Data Link</td><td>Frames and MAC addresses</td><td>Ethernet, switches</td></tr>
+              <tr><td>1 Physical</td><td>Bits over cables or radio</td><td>Cables, hubs</td></tr>
+            </table></div>
+            <p><strong>TCP/IP</strong> has four layers: Application, Transport, Internet, and Network Access (Link). It is the model the real Internet uses.</p>
+            <div class="remember"><strong>Memory aid (top to bottom):</strong> "All People Seem To Need Data Processing."</div>
+          </section>
+
+          <section class="topic" id="ip">
+            <h2>IP addresses and IP address classes</h2>
+            <p>An <strong>IP address</strong> identifies a device on a network. <strong>IPv4</strong> uses 32 bits written as four numbers from 0 to 255 (for example <code>192.168.1.10</code>). <strong>IPv6</strong> uses 128 bits.</p>
+            <div class="table-wrap"><table>
+              <tr><th>Class</th><th>First octet</th><th>Default mask</th><th>Typical use</th></tr>
+              <tr><td>A</td><td>1 to 126</td><td>255.0.0.0</td><td>Very large networks</td></tr>
+              <tr><td>B</td><td>128 to 191</td><td>255.255.0.0</td><td>Medium networks</td></tr>
+              <tr><td>C</td><td>192 to 223</td><td>255.255.255.0</td><td>Small networks</td></tr>
+              <tr><td>D</td><td>224 to 239</td><td>n/a</td><td>Multicast</td></tr>
+              <tr><td>E</td><td>240 to 255</td><td>n/a</td><td>Experimental</td></tr>
+            </table></div>
+            <ul>
+              <li><strong>Private ranges:</strong> 10.x.x.x, 172.16.x.x to 172.31.x.x, 192.168.x.x</li>
+              <li><strong>Loopback:</strong> 127.0.0.1 points to your own computer.</li>
+              <li><strong>Subnet mask:</strong> separates the network part from the host part.</li>
+              <li><strong>Default gateway:</strong> the router that leads to other networks.</li>
+            </ul>
+          </section>
+
+          <section class="topic" id="devices">
+            <h2>Network devices</h2>
+            <div class="table-wrap"><table>
+              <tr><th>Device</th><th>What it does</th></tr>
+              <tr><td>Hub</td><td>Repeats incoming data to every port (Layer 1). Creates a lot of traffic.</td></tr>
+              <tr><td>Switch</td><td>Learns MAC addresses and sends data only to the correct port (Layer 2).</td></tr>
+              <tr><td>Router</td><td>Connects different networks and forwards packets using IP addresses (Layer 3).</td></tr>
+              <tr><td>Access point</td><td>Lets wireless devices join a wired network.</td></tr>
+              <tr><td>Modem</td><td>Converts signals so you can connect to your Internet provider.</td></tr>
+            </table></div>
+            <div class="remember"><strong>Remember:</strong> Hub = shouts to everyone. Switch = talks to the right device. Router = connects networks.</div>
+          </section>
+
+          <section class="topic" id="protocols">
+            <h2>Transmission protocols: TCP and UDP</h2>
+            <div class="table-wrap"><table>
+              <tr><th></th><th>TCP</th><th>UDP</th></tr>
+              <tr><td>Connection</td><td>Connection-oriented (handshake first)</td><td>Connectionless</td></tr>
+              <tr><td>Reliability</td><td>Acknowledgments and retransmission</td><td>No guarantee</td></tr>
+              <tr><td>Speed</td><td>Slower, more overhead</td><td>Faster, less overhead</td></tr>
+              <tr><td>Used for</td><td>Web pages, email, file transfer</td><td>Video calls, streaming, online games, DNS</td></tr>
+            </table></div>
+          </section>
+
+          <section class="topic" id="types">
+            <h2>LAN, MAN, and WAN</h2>
+            <ul>
+              <li><strong>LAN (Local Area Network):</strong> a room, building, or campus. Example: a school computer lab.</li>
+              <li><strong>MAN (Metropolitan Area Network):</strong> a city or large campus area.</li>
+              <li><strong>WAN (Wide Area Network):</strong> a large geographic area. The Internet is the largest WAN.</li>
+            </ul>
+          </section>
+
+          <section class="topic" id="troubleshooting">
+            <h2>Network communication and troubleshooting</h2>
+            <p>When a connection fails, work from the bottom up: cables and power, then IP settings, then DNS and applications.</p>
+            <ul>
+              <li><code>ping 127.0.0.1</code> tests your own network software.</li>
+              <li><code>ping</code> the default gateway to test your local network.</li>
+              <li><code>ping 8.8.8.8</code> tests Internet connectivity. If this works but a website name fails, suspect DNS.</li>
+              <li><code>ipconfig</code> (Windows) or <code>ip a</code> (Linux) shows your IP settings.</li>
+              <li><code>tracert</code> (Windows) or <code>traceroute</code> (Linux) shows the path packets take.</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      <div class="container">
+        <div class="action-bar">
+          <p><strong>Ready to test yourself?</strong> The quiz has <span id="total-questions">20</span> multiple-choice questions. Answers are shown only after you submit.</p>
+          <div class="btn-row">
+            <button type="button" class="btn btn-primary" id="take-quiz-btn">Take Quiz</button>
+            <a class="btn btn-secondary" href="index.html#subjects">Back to Subjects</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= QUIZ ================= -->
+    <section id="quiz-view" class="hidden">
+      <div class="container">
+        <div class="panel">
+          <h2 data-focus>Networking Quiz</h2>
+          <div class="quiz-top">
+            <span class="counter" id="q-counter">Question 1</span>
+            <span class="answered" id="q-answered"></span>
+          </div>
+          <div class="progress" id="progress" role="progressbar" aria-label="Quiz progress" aria-valuemin="1" aria-valuenow="1">
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+
+          <p class="question-text" id="q-text"></p>
+          <div class="choices" id="choices" role="radiogroup" aria-label="Answer choices"></div>
+
+          <div class="quiz-nav">
+            <button type="button" class="btn btn-secondary" id="prev-btn">Previous</button>
+            <button type="button" class="btn btn-secondary" id="next-btn">Next</button>
+            <button type="button" class="btn btn-primary" id="submit-btn">Submit Quiz</button>
+          </div>
+
+          <div class="dots" id="dots" aria-label="Question navigator"></div>
+          <p class="section-sub" style="margin-top:1rem;margin-bottom:0">Tip: press A, B, C, or D to answer, and the left and right arrow keys to move between questions.</p>
+          <div class="btn-row" style="margin-top:1rem">
+            <button type="button" class="btn btn-secondary" id="quiz-exit-btn">Back to Reviewer</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RESULTS ================= -->
+    <section id="results-view" class="hidden">
+      <div class="container">
+        <div class="panel">
+          <h2 data-focus>Quiz results: <span id="res-subject"></span></h2>
+          <div class="score-hero">
+            <div class="pct" id="res-pct">0%</div>
+            <div class="msg" id="res-msg"></div>
+          </div>
+          <div class="stat-grid">
+            <div class="stat"><strong id="res-total">0</strong><span>Total questions</span></div>
+            <div class="stat good"><strong id="res-correct">0</strong><span>Correct</span></div>
+            <div class="stat bad"><strong id="res-incorrect">0</strong><span>Incorrect</span></div>
+            <div class="stat"><strong id="res-unanswered">0</strong><span>Unanswered</span></div>
+            <div class="stat"><strong id="res-score">0</strong><span>Final score</span></div>
+          </div>
+          <p class="section-sub" id="res-formula"></p>
+          <div class="server-note hidden" id="server-note"></div>
+          <div class="btn-row" style="margin-top:1rem">
+            <button type="button" class="btn btn-primary" id="retake-btn">Retake Quiz</button>
+            <button type="button" class="btn btn-secondary" id="back-to-reviewer-btn">Back to Reviewer</button>
+            <a class="btn btn-secondary" href="index.html#subjects">Back to Subjects</a>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Review your answers</h2>
+          <p class="section-sub">Green means correct, red means incorrect, and yellow means you left it blank.</p>
+          <div id="review-list"></div>
+          <div class="btn-row">
+            <button type="button" class="btn btn-primary" data-action="take-quiz">Retake Quiz</button>
+            <a class="btn btn-secondary" href="index.html">Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title">
+    <h2 id="confirm-title">Submit your quiz?</h2>
+    <p id="confirm-warning" class="warn hidden"></p>
+    <p>After you submit, you will see your score and the correct answers. You will not be able to change your answers.</p>
+    <div class="btn-row">
+      <button type="button" class="btn btn-primary" id="confirm-yes">Submit Quiz</button>
+      <button type="button" class="btn btn-secondary" id="confirm-no">Keep Reviewing</button>
+    </div>
+  </dialog>
+
+  <footer>College Quiz Reviewer &middot; Application Development Project</footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/questions.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

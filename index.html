@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>College Quiz Reviewer</title>
+  <meta name="description" content="Review lessons and practice multiple-choice quizzes for five college IT subjects.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <a class="brand" href="#home">College Quiz Reviewer</a>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#subjects">Subjects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="upload.html">Upload Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="container">
+      <h1>College Quiz Reviewer</h1>
+      <p>Review smarter. Practice better. Prepare for your exams.</p>
+      <p>Pick a subject, read the reviewer notes, then test yourself. No login needed.</p>
+      <div class="stats">
+        <div><strong>5</strong><span>subjects</span></div>
+        <div><strong id="total-all-questions">100+</strong><span>practice questions</span></div>
+        <div><strong>0</strong><span>accounts required</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="subjects">
+      <div class="container">
+        <h2 class="section-title">Choose a subject</h2>
+        <p class="section-sub">Each subject has reviewer notes and its own quiz.</p>
+
+        <div class="card-grid">
+
+          <a class="subject-card" href="application-development.html">
+            <div class="subject-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg>
+            </div>
+            <h3>Application Development</h3>
+            <p>SDLC, requirements, system design, UI/UX, testing, deployment, maintenance, and database integration.</p>
+            <div class="meta"><span data-count-for="application-development">20 practice questions</span><br><span data-score-for="application-development"></span></div>
+            <span class="btn btn-primary">Start Reviewing</span>
+          </a>
+
+          <a class="subject-card" href="networking.html">
+            <div class="subject-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4.5M12 12l-5.5 5M12 12l5.5 5"/></svg>
+            </div>
+            <h3>Networking</h3>
+            <p>Topologies, OSI and TCP/IP, IP address classes, network devices, TCP and UDP, LAN, MAN, WAN, and troubleshooting.</p>
+            <div class="meta"><span data-count-for="networking">20 practice questions</span><br><span data-score-for="networking"></span></div>
+            <span class="btn btn-primary">Start Reviewing</span>
+          </a>
+
+          <a class="subject-card" href="oop.html">
+            <div class="subject-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12"/><path d="M3 7l9 5 9-5"/></svg>
+            </div>
+            <h3>Object-Oriented Programming</h3>
+            <p>Classes, objects, constructors, encapsulation, inheritance, polymorphism, and abstraction, with Java examples.</p>
+            <div class="meta"><span data-count-for="oop">20 practice questions</span><br><span data-score-for="oop"></span></div>
+            <span class="btn btn-primary">Start Reviewing</span>
+          </a>
+
+          <a class="subject-card" href="automata-theory.html">
+            <div class="subject-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="3"/><circle cx="19" cy="12" r="3"/><circle cx="19" cy="12" r="1"/><path d="M8 12h8"/><path d="M14 9l2 3-2 3" /></svg>
+            </div>
+            <h3>Automata Theory and Formal Languages</h3>
+            <p>Alphabets and strings, DFA, NFA, epsilon-NFA, regular expressions, Thompson's construction, and conversions.</p>
+            <div class="meta"><span data-count-for="automata-theory">20 practice questions</span><br><span data-score-for="automata-theory"></span></div>
+            <span class="btn btn-primary">Start Reviewing</span>
+          </a>
+
+          <a class="subject-card" href="internet-web-technologies.html">
+            <div class="subject-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"/></svg>
+            </div>
+            <h3>Internet and Advanced Web Technologies</h3>
+            <p>How the Web works, HTML, CSS, JavaScript, HTTP and HTTPS, DNS, client-server design, and web security basics.</p>
+            <div class="meta"><span data-count-for="internet-web-technologies">21 practice questions</span><br><span data-score-for="internet-web-technologies"></span></div>
+            <span class="btn btn-primary">Start Reviewing</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="my-quizzes" style="padding-top:0">
+      <div class="container">
+        <h2 class="section-title">Quizzes shared by your class</h2>
+        <p class="section-sub">Have questions from your instructor or your own notes? Log in, upload them as a Word (.docx) file, and your class can practice them here.</p>
+        <p id="custom-empty" class="empty-note">No shared quizzes yet. Log in to see and upload quizzes.</p>
+        <div id="custom-list"></div>
+        <div class="btn-row"><a class="btn btn-secondary" href="upload.html">Upload a Quiz</a></div>
+      </div>
+    </section>
+
+    <section class="section white" id="about">
+      <div class="container">
+        <h2 class="section-title">About this reviewer</h2>
+        <p class="section-sub">A study tool built for an Application Development class project.</p>
+        <div class="about-grid">
+          <div class="about-item"><h3>Read first</h3><p>Every subject has short notes with definitions, key points, and examples written for first-year students.</p></div>
+          <div class="about-item"><h3>Then practice</h3><p>Answer multiple-choice questions one at a time. Go back and change answers before you submit.</p></div>
+          <div class="about-item"><h3>Learn from mistakes</h3><p>After you submit, see your score and the correct answer with an explanation for every question.</p></div>
+          <div class="about-item"><h3>Bring your own quizzes</h3><p>Upload questions from a Word (.docx) file. They are checked, saved in the database, and shared with your class.</p></div>
+          <div class="about-item"><h3>Private by design</h3><p>The built-in subjects need no account, and scores stay in this browser tab. Accounts use a Gmail code, and passwords are stored only as secure hashes.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>College Quiz Reviewer &middot; Application Development Project &middot; <span id="year"></span></footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/questions.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

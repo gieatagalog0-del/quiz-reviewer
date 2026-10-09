@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Application Development | College Quiz Reviewer</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-subject="application-development">
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <a class="brand" href="index.html">College Quiz Reviewer</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#subjects" class="active">Subjects</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="upload.html">Upload Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Application Development</h1>
+      <p>Learn how software is planned, designed, built, tested, released, and maintained.</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= REVIEWER ================= -->
+    <section id="reviewer-view">
+      <div class="container reviewer-layout">
+        <aside class="toc" aria-label="Topics">
+          <h2>Topics</h2>
+          <ul>
+            <li><a href="#sdlc">Software Development Life Cycle</a></li>
+            <li><a href="#requirements">Requirements gathering</a></li>
+            <li><a href="#design">System design and development</a></li>
+            <li><a href="#uiux">UI and UX</a></li>
+            <li><a href="#testing">Testing and debugging</a></li>
+            <li><a href="#deployment">Deployment and maintenance</a></li>
+            <li><a href="#database">Database integration</a></li>
+          </ul>
+        </aside>
+        <div>
+          <section class="topic" id="overview">
+            <h2>Subject overview</h2>
+            <p>Application Development is about turning an idea into working software. You learn how teams plan, design, build, test, release, and maintain applications, and how apps store and use data.</p>
+          </section>
+
+          <section class="topic" id="sdlc">
+            <h2>Software Development Life Cycle (SDLC)</h2>
+            <p>The <strong>SDLC</strong> is the step-by-step process teams follow to produce software. Its common phases are:</p>
+            <ol>
+              <li><strong>Planning:</strong> decide the goals, scope, schedule, and budget.</li>
+              <li><strong>Requirements analysis:</strong> find out what users need.</li>
+              <li><strong>Design:</strong> plan screens, data, and architecture.</li>
+              <li><strong>Implementation:</strong> write the code.</li>
+              <li><strong>Testing:</strong> find and fix defects.</li>
+              <li><strong>Deployment:</strong> release to users.</li>
+              <li><strong>Maintenance:</strong> fix, update, and improve after release.</li>
+            </ol>
+            <h3>Common models</h3>
+            <div class="table-wrap"><table>
+              <tr><th>Model</th><th>How it works</th><th>Best when</th></tr>
+              <tr><td>Waterfall</td><td>Phases run one after another in a fixed order.</td><td>Requirements are clear and stable.</td></tr>
+              <tr><td>Agile</td><td>Short sprints deliver working software and use constant feedback.</td><td>Requirements may change.</td></tr>
+              <tr><td>Prototype</td><td>A sample version is built early so users can react to it.</td><td>Users are unsure what they want.</td></tr>
+            </table></div>
+            <div class="remember"><strong>Remember:</strong> Waterfall is sequential. Agile is iterative. Both include the same basic activities.</div>
+          </section>
+
+          <section class="topic" id="requirements">
+            <h2>Requirements gathering and analysis</h2>
+            <p>A <strong>requirement</strong> is something the system must do or be. Analysts collect requirements through interviews, questionnaires, observation, and reviewing existing documents.</p>
+            <ul>
+              <li><strong>Functional requirements:</strong> features and behavior (for example, "the student can submit a quiz").</li>
+              <li><strong>Non-functional requirements:</strong> qualities such as speed, security, reliability, and usability.</li>
+            </ul>
+            <div class="example"><strong>Example:</strong> "The system shall calculate the percentage score" is functional. "The page shall load in under 3 seconds" is non-functional.</div>
+            <div class="remember"><strong>Remember:</strong> Good requirements are clear, testable, and agreed upon by the users or client. Tools such as use case diagrams and user stories help organize them.</div>
+          </section>
+
+          <section class="topic" id="design">
+            <h2>System design and development</h2>
+            <p><strong>Design</strong> decides how the system will be built. It includes the architecture (for example, client-server), the database design, and the screen layouts. Diagrams such as flowcharts, ER diagrams, and UML are common.</p>
+            <p><strong>Development</strong> (implementation) is writing the code following the design, using good practices:</p>
+            <ul>
+              <li>Use meaningful names and comments.</li>
+              <li>Split programs into small, reusable modules.</li>
+              <li>Use <strong>version control</strong> (such as Git) to track changes and collaborate.</li>
+            </ul>
+          </section>
+
+          <section class="topic" id="uiux">
+            <h2>User interface (UI) and user experience (UX)</h2>
+            <ul>
+              <li><strong>UI</strong> is what users see and touch: buttons, menus, colors, fonts, and layout.</li>
+              <li><strong>UX</strong> is how it feels to use the product from start to finish: is it easy, fast, and clear?</li>
+            </ul>
+            <p>Designers start with <strong>wireframes</strong> (simple layout sketches), then <strong>mockups</strong> (visual designs), then <strong>prototypes</strong> (clickable versions).</p>
+            <div class="remember"><strong>Good design principles:</strong> consistency, clear feedback, simplicity, accessibility (readable text, good contrast), and responsiveness on different screen sizes.</div>
+          </section>
+
+          <section class="topic" id="testing">
+            <h2>Software testing and debugging</h2>
+            <p><strong>Testing</strong> checks whether the software works as expected. <strong>Debugging</strong> is finding and fixing the cause of a defect.</p>
+            <div class="table-wrap"><table>
+              <tr><th>Level or type</th><th>What it checks</th></tr>
+              <tr><td>Unit testing</td><td>Single functions or methods in isolation</td></tr>
+              <tr><td>Integration testing</td><td>Modules working together</td></tr>
+              <tr><td>System testing</td><td>The whole application against the requirements</td></tr>
+              <tr><td>User acceptance testing (UAT)</td><td>Real users or the client confirm it meets their needs</td></tr>
+              <tr><td>Black-box testing</td><td>Inputs and outputs only, without looking at the code</td></tr>
+              <tr><td>White-box testing</td><td>Internal code paths and logic</td></tr>
+            </table></div>
+            <div class="remember"><strong>Types of errors:</strong> syntax errors (the code breaks language rules), runtime errors (crash while running), and logic errors (runs but gives wrong results).</div>
+          </section>
+
+          <section class="topic" id="deployment">
+            <h2>Application deployment and maintenance</h2>
+            <p><strong>Deployment</strong> makes the finished application available to users, for example by uploading a website to a server or publishing an app to an app store.</p>
+            <p><strong>Maintenance</strong> keeps the software useful after release:</p>
+            <ul>
+              <li><strong>Corrective:</strong> fix bugs found by users.</li>
+              <li><strong>Adaptive:</strong> change the software for new platforms or rules.</li>
+              <li><strong>Perfective:</strong> improve features and performance.</li>
+              <li><strong>Preventive:</strong> clean up code to avoid future problems.</li>
+            </ul>
+          </section>
+
+          <section class="topic" id="database">
+            <h2>Database integration and application functionality</h2>
+            <p>Most applications store data in a <strong>database</strong>. The app sends queries and shows the results to the user.</p>
+            <ul>
+              <li><strong>CRUD:</strong> Create, Read, Update, Delete are the four basic operations.</li>
+              <li><strong>Primary key:</strong> a unique identifier for each row.</li>
+              <li><strong>Foreign key:</strong> a field that links to the primary key of another table.</li>
+              <li><strong>Validation:</strong> check user input before saving it.</li>
+            </ul>
+<pre><code>SELECT name, grade FROM students WHERE grade &gt;= 75;
+INSERT INTO students (name, grade) VALUES ('Ana', 90);
+UPDATE students SET grade = 92 WHERE id = 1;
+DELETE FROM students WHERE id = 1;</code></pre>
+            <div class="remember"><strong>Remember:</strong> Never build SQL by joining user input directly into the text. Use prepared (parameterized) statements to prevent SQL injection.</div>
+          </section>
+        </div>
+      </div>
+      <div class="container">
+        <div class="action-bar">
+          <p><strong>Ready to test yourself?</strong> The quiz has <span id="total-questions">20</span> multiple-choice questions. Answers are shown only after you submit.</p>
+          <div class="btn-row">
+            <button type="button" class="btn btn-primary" id="take-quiz-btn">Take Quiz</button>
+            <a class="btn btn-secondary" href="index.html#subjects">Back to Subjects</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= QUIZ ================= -->
+    <section id="quiz-view" class="hidden">
+      <div class="container">
+        <div class="panel">
+          <h2 data-focus>Application Development Quiz</h2>
+          <div class="quiz-top">
+            <span class="counter" id="q-counter">Question 1</span>
+            <span class="answered" id="q-answered"></span>
+          </div>
+          <div class="progress" id="progress" role="progressbar" aria-label="Quiz progress" aria-valuemin="1" aria-valuenow="1">
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+
+          <p class="question-text" id="q-text"></p>
+          <div class="choices" id="choices" role="radiogroup" aria-label="Answer choices"></div>
+
+          <div class="quiz-nav">
+            <button type="button" class="btn btn-secondary" id="prev-btn">Previous</button>
+            <button type="button" class="btn btn-secondary" id="next-btn">Next</button>
+            <button type="button" class="btn btn-primary" id="submit-btn">Submit Quiz</button>
+          </div>
+
+          <div class="dots" id="dots" aria-label="Question navigator"></div>
+          <p class="section-sub" style="margin-top:1rem;margin-bottom:0">Tip: press A, B, C, or D to answer, and the left and right arrow keys to move between questions.</p>
+          <div class="btn-row" style="margin-top:1rem">
+            <button type="button" class="btn btn-secondary" id="quiz-exit-btn">Back to Reviewer</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RESULTS ================= -->
+    <section id="results-view" class="hidden">
+      <div class="container">
+        <div class="panel">
+          <h2 data-focus>Quiz results: <span id="res-subject"></span></h2>
+          <div class="score-hero">
+            <div class="pct" id="res-pct">0%</div>
+            <div class="msg" id="res-msg"></div>
+          </div>
+          <div class="stat-grid">
+            <div class="stat"><strong id="res-total">0</strong><span>Total questions</span></div>
+            <div class="stat good"><strong id="res-correct">0</strong><span>Correct</span></div>
+            <div class="stat bad"><strong id="res-incorrect">0</strong><span>Incorrect</span></div>
+            <div class="stat"><strong id="res-unanswered">0</strong><span>Unanswered</span></div>
+            <div class="stat"><strong id="res-score">0</strong><span>Final score</span></div>
+          </div>
+          <p class="section-sub" id="res-formula"></p>
+          <div class="server-note hidden" id="server-note"></div>
+          <div class="btn-row" style="margin-top:1rem">
+            <button type="button" class="btn btn-primary" id="retake-btn">Retake Quiz</button>
+            <button type="button" class="btn btn-secondary" id="back-to-reviewer-btn">Back to Reviewer</button>
+            <a class="btn btn-secondary" href="index.html#subjects">Back to Subjects</a>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Review your answers</h2>
+          <p class="section-sub">Green means correct, red means incorrect, and yellow means you left it blank.</p>
+          <div id="review-list"></div>
+          <div class="btn-row">
+            <button type="button" class="btn btn-primary" data-action="take-quiz">Retake Quiz</button>
+            <a class="btn btn-secondary" href="index.html">Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title">
+    <h2 id="confirm-title">Submit your quiz?</h2>
+    <p id="confirm-warning" class="warn hidden"></p>
+    <p>After you submit, you will see your score and the correct answers. You will not be able to change your answers.</p>
+    <div class="btn-row">
+      <button type="button" class="btn btn-primary" id="confirm-yes">Submit Quiz</button>
+      <button type="button" class="btn btn-secondary" id="confirm-no">Keep Reviewing</button>
+    </div>
+  </dialog>
+
+  <footer>College Quiz Reviewer &middot; Application Development Project</footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/questions.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

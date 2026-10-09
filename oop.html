@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Object-Oriented Programming (OOP) | College Quiz Reviewer</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-subject="oop">
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <a class="brand" href="index.html">College Quiz Reviewer</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#subjects" class="active">Subjects</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="upload.html">Upload Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Object-Oriented Programming (OOP)</h1>
+      <p>Learn classes, objects, and the four pillars of OOP with simple Java examples.</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= REVIEWER ================= -->
+    <section id="reviewer-view">
+      <div class="container reviewer-layout">
+        <aside class="toc" aria-label="Topics">
+          <h2>Topics</h2>
+          <ul>
+            <li><a href="#classes">Classes and objects</a></li>
+            <li><a href="#members">Attributes and methods</a></li>
+            <li><a href="#constructors">Constructors</a></li>
+            <li><a href="#modifiers">Access modifiers</a></li>
+            <li><a href="#encapsulation">Encapsulation</a></li>
+            <li><a href="#inheritance">Inheritance</a></li>
+            <li><a href="#polymorphism">Polymorphism</a></li>
+            <li><a href="#abstraction">Abstraction</a></li>
+          </ul>
+        </aside>
+        <div>
+          <section class="topic" id="overview">
+            <h2>Subject overview</h2>
+            <p>Object-Oriented Programming (OOP) organizes software around <strong>objects</strong> that combine data and behavior. It makes programs easier to reuse, extend, and maintain. Examples here use <strong>Java</strong>.</p>
+            <div class="remember"><strong>Four pillars of OOP:</strong> Encapsulation, Inheritance, Polymorphism, Abstraction.</div>
+          </section>
+
+          <section class="topic" id="classes">
+            <h2>Classes and objects</h2>
+            <p>A <strong>class</strong> is a blueprint. An <strong>object</strong> is a real instance built from that blueprint. One class can create many objects.</p>
+<pre><code>public class Student {
+    String name;
+    int grade;
+}
+
+// Creating objects
+Student s1 = new Student();
+Student s2 = new Student();</code></pre>
+            <div class="example"><strong>Analogy:</strong> A house plan is the class. Each house built from the plan is an object.</div>
+          </section>
+
+          <section class="topic" id="members">
+            <h2>Attributes and methods</h2>
+            <ul>
+              <li><strong>Attributes</strong> (fields) hold the object's data or state.</li>
+              <li><strong>Methods</strong> are actions the object can perform.</li>
+            </ul>
+<pre><code>public class Student {
+    String name;          // attribute
+    int grade;            // attribute
+
+    void displayInfo() {  // method
+        System.out.println(name + ": " + grade);
+    }
+}</code></pre>
+          </section>
+
+          <section class="topic" id="constructors">
+            <h2>Constructors</h2>
+            <p>A <strong>constructor</strong> is a special method that runs when an object is created. It has the <em>same name as the class</em> and <em>no return type</em>. If you write none, Java supplies a default no-argument constructor. The keyword <code>this</code> refers to the current object.</p>
+<pre><code>public class Student {
+    private String name;
+    private int grade;
+
+    public Student(String name, int grade) {
+        this.name = name;
+        this.grade = grade;
+    }
+}
+
+Student s = new Student("Ana", 90);</code></pre>
+            <div class="remember"><strong>Remember:</strong> Several constructors with different parameters are allowed. This is constructor overloading.</div>
+          </section>
+
+          <section class="topic" id="modifiers">
+            <h2>Access modifiers</h2>
+            <div class="table-wrap"><table>
+              <tr><th>Modifier</th><th>Same class</th><th>Same package</th><th>Subclass</th><th>Everywhere</th></tr>
+              <tr><td>private</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
+              <tr><td>default (none)</td><td>Yes</td><td>Yes</td><td>Same package only</td><td>No</td></tr>
+              <tr><td>protected</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+              <tr><td>public</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+            </table></div>
+          </section>
+
+          <section class="topic" id="encapsulation">
+            <h2>Encapsulation</h2>
+            <p><strong>Encapsulation</strong> bundles data and methods together and hides the data from outside code. Make fields <code>private</code> and offer <code>public</code> getters and setters so the class can validate changes.</p>
+<pre><code>public class Account {
+    private double balance;
+
+    public double getBalance() { return balance; }
+
+    public void deposit(double amount) {
+        if (amount &gt; 0) {
+            balance += amount;
+        }
+    }
+}</code></pre>
+            <div class="remember"><strong>Benefit:</strong> The object protects its own data from invalid values.</div>
+          </section>
+
+          <section class="topic" id="inheritance">
+            <h2>Inheritance</h2>
+            <p><strong>Inheritance</strong> lets a class (subclass) reuse the attributes and methods of another class (superclass) using <code>extends</code>. Use <code>super</code> to refer to the parent.</p>
+<pre><code>class Animal {
+    void eat() { System.out.println("Eating..."); }
+}
+
+class Dog extends Animal {
+    void bark() { System.out.println("Woof!"); }
+}
+
+Dog d = new Dog();
+d.eat();   // inherited
+d.bark();</code></pre>
+            <div class="remember"><strong>Remember:</strong> A Java class can extend only one class, but it can implement many interfaces.</div>
+          </section>
+
+          <section class="topic" id="polymorphism">
+            <h2>Polymorphism</h2>
+            <p><strong>Polymorphism</strong> means "many forms": the same method call can behave differently depending on the object.</p>
+            <ul>
+              <li><strong>Overloading</strong> (compile time): same method name, different parameters, in one class.</li>
+              <li><strong>Overriding</strong> (runtime): a subclass replaces a method it inherited, with the same signature.</li>
+            </ul>
+<pre><code>class Animal { void sound() { System.out.println("Some sound"); } }
+class Cat extends Animal {
+    @Override
+    void sound() { System.out.println("Meow"); }
+}
+
+Animal a = new Cat();
+a.sound();   // prints Meow</code></pre>
+          </section>
+
+          <section class="topic" id="abstraction">
+            <h2>Abstraction</h2>
+            <p><strong>Abstraction</strong> shows only what is necessary and hides the details. In Java you use <strong>abstract classes</strong> and <strong>interfaces</strong>.</p>
+            <ul>
+              <li>An <strong>abstract class</strong> cannot be instantiated and may contain abstract methods without a body.</li>
+              <li>An <strong>interface</strong> is a contract of methods. A class uses <code>implements</code> to promise to provide them.</li>
+            </ul>
+<pre><code>abstract class Shape {
+    abstract double area();
+}
+
+class Circle extends Shape {
+    double r;
+    Circle(double r) { this.r = r; }
+    double area() { return Math.PI * r * r; }
+}</code></pre>
+          </section>
+        </div>
+      </div>
+      <div class="container">
+        <div class="action-bar">
+          <p><strong>Ready to test yourself?</strong> The quiz has <span id="total-questions">20</span> multiple-choice questions. Answers are shown only after you submit.</p>
+          <div class="btn-row">
+            <button type="button" class="btn btn-primary" id="take-quiz-btn">Take Quiz</button>
+            <a class="btn btn-secondary" href="index.html#subjects">Back to Subjects</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= QUIZ ================= -->
+    <section id="quiz-view" class="hidden">
+      <div class="container">
+        <div class="panel">
+          <h2 data-focus>Object-Oriented Programming (OOP) Quiz</h2>
+          <div class="quiz-top">
+            <span class="counter" id="q-counter">Question 1</span>
+            <span class="answered" id="q-answered"></span>
+          </div>
+          <div class="progress" id="progress" role="progressbar" aria-label="Quiz progress" aria-valuemin="1" aria-valuenow="1">
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+
+          <p class="question-text" id="q-text"></p>
+          <div class="choices" id="choices" role="radiogroup" aria-label="Answer choices"></div>
+
+          <div class="quiz-nav">
+            <button type="button" class="btn btn-secondary" id="prev-btn">Previous</button>
+            <button type="button" class="btn btn-secondary" id="next-btn">Next</button>
+            <button type="button" class="btn btn-primary" id="submit-btn">Submit Quiz</button>
+          </div>
+
+          <div class="dots" id="dots" aria-label="Question navigator"></div>
+          <p class="section-sub" style="margin-top:1rem;margin-bottom:0">Tip: press A, B, C, or D to answer, and the left and right arrow keys to move between questions.</p>
+          <div class="btn-row" style="margin-top:1rem">
+            <button type="button" class="btn btn-secondary" id="quiz-exit-btn">Back to Reviewer</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RESULTS ================= -->
+    <section id="results-view" class="hidden">
+      <div class="container">
+        <div class="panel">
+          <h2 data-focus>Quiz results: <span id="res-subject"></span></h2>
+          <div class="score-hero">
+            <div class="pct" id="res-pct">0%</div>
+            <div class="msg" id="res-msg"></div>
+          </div>
+          <div class="stat-grid">
+            <div class="stat"><strong id="res-total">0</strong><span>Total questions</span></div>
+            <div class="stat good"><strong id="res-correct">0</strong><span>Correct</span></div>
+            <div class="stat bad"><strong id="res-incorrect">0</strong><span>Incorrect</span></div>
+            <div class="stat"><strong id="res-unanswered">0</strong><span>Unanswered</span></div>
+            <div class="stat"><strong id="res-score">0</strong><span>Final score</span></div>
+          </div>
+          <p class="section-sub" id="res-formula"></p>
+          <div class="server-note hidden" id="server-note"></div>
+          <div class="btn-row" style="margin-top:1rem">
+            <button type="button" class="btn btn-primary" id="retake-btn">Retake Quiz</button>
+            <button type="button" class="btn btn-secondary" id="back-to-reviewer-btn">Back to Reviewer</button>
+            <a class="btn btn-secondary" href="index.html#subjects">Back to Subjects</a>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Review your answers</h2>
+          <p class="section-sub">Green means correct, red means incorrect, and yellow means you left it blank.</p>
+          <div id="review-list"></div>
+          <div class="btn-row">
+            <button type="button" class="btn btn-primary" data-action="take-quiz">Retake Quiz</button>
+            <a class="btn btn-secondary" href="index.html">Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title">
+    <h2 id="confirm-title">Submit your quiz?</h2>
+    <p id="confirm-warning" class="warn hidden"></p>
+    <p>After you submit, you will see your score and the correct answers. You will not be able to change your answers.</p>
+    <div class="btn-row">
+      <button type="button" class="btn btn-primary" id="confirm-yes">Submit Quiz</button>
+      <button type="button" class="btn btn-secondary" id="confirm-no">Keep Reviewing</button>
+    </div>
+  </dialog>
+
+  <footer>College Quiz Reviewer &middot; Application Development Project</footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/questions.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

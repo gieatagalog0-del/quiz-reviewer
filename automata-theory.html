@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Automata Theory and Formal Languages | College Quiz Reviewer</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-subject="automata-theory">
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <a class="brand" href="index.html">College Quiz Reviewer</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#subjects" class="active">Subjects</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="upload.html">Upload Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Automata Theory and Formal Languages</h1>
+      <p>Study alphabets, strings, finite automata, regular expressions, and how they relate.</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= REVIEWER ================= -->
+    <section id="reviewer-view">
+      <div class="container reviewer-layout">
+        <aside class="toc" aria-label="Topics">
+          <h2>Topics</h2>
+          <ul>
+            <li><a href="#terms">Alphabets, strings, languages</a></li>
+            <li><a href="#fa">Finite automata</a></li>
+            <li><a href="#dfa">DFA</a></li>
+            <li><a href="#nfa">NFA</a></li>
+            <li><a href="#enfa">Epsilon-NFA</a></li>
+            <li><a href="#regex">Regular expressions</a></li>
+            <li><a href="#thompson">Thompson's construction</a></li>
+            <li><a href="#conversion">NFA to DFA conversion</a></li>
+            <li><a href="#diagrams">Diagrams and tables</a></li>
+          </ul>
+        </aside>
+        <div>
+          <section class="topic" id="overview">
+            <h2>Subject overview</h2>
+            <p>Automata Theory studies simple abstract machines and the languages they can recognize. It is the foundation for compilers, text searching, and protocol design.</p>
+          </section>
+
+          <section class="topic" id="terms">
+            <h2>Basic terminology and formal languages</h2>
+            <ul>
+              <li><strong>Alphabet (Σ):</strong> a finite, non-empty set of symbols. Example: Σ = {0, 1}.</li>
+              <li><strong>String:</strong> a finite sequence of symbols from the alphabet. Example: 0110.</li>
+              <li><strong>Length |w|:</strong> the number of symbols in w. |0110| = 4.</li>
+              <li><strong>Empty string (ε):</strong> a string with no symbols. |ε| = 0.</li>
+              <li><strong>Σ*:</strong> the set of all strings over Σ, including ε.</li>
+              <li><strong>Language:</strong> any set of strings over an alphabet (a subset of Σ*).</li>
+            </ul>
+            <div class="example"><strong>Example:</strong> Over Σ = {0, 1}, the language L = {strings that end with 1} contains 1, 01, 11, 101, and so on.</div>
+            <p><strong>Operations on languages:</strong> union (L1 ∪ L2), concatenation (L1L2), and Kleene star (L*, zero or more strings from L joined together).</p>
+          </section>
+
+          <section class="topic" id="fa">
+            <h2>Finite automata</h2>
+            <p>A <strong>finite automaton</strong> is a machine with a finite number of states that reads an input string one symbol at a time and moves between states. If it ends in an <strong>accepting (final) state</strong> after reading the whole string, the string is accepted.</p>
+          </section>
+
+          <section class="topic" id="dfa">
+            <h2>Deterministic Finite Automata (DFA)</h2>
+            <p>A DFA is defined by a 5-tuple <strong>(Q, Σ, δ, q0, F)</strong>:</p>
+            <ul>
+              <li><strong>Q:</strong> finite set of states</li>
+              <li><strong>Σ:</strong> input alphabet</li>
+              <li><strong>δ:</strong> transition function, δ: Q × Σ → Q</li>
+              <li><strong>q0:</strong> start state</li>
+              <li><strong>F:</strong> set of accepting states</li>
+            </ul>
+            <div class="remember"><strong>Key rule:</strong> In a DFA, every state has exactly one transition for every input symbol.</div>
+            <div class="example"><strong>Example:</strong> DFA for strings over {0,1} that end with 1. States: q0 (start), q1 (accepting). From either state, input 1 goes to q1 and input 0 goes to q0.</div>
+          </section>
+
+          <section class="topic" id="nfa">
+            <h2>Nondeterministic Finite Automata (NFA)</h2>
+            <p>An NFA is like a DFA but δ maps to a <em>set</em> of states, so a state may have <strong>several</strong> transitions (or none) for the same symbol. A string is accepted if <em>at least one</em> path leads to an accepting state.</p>
+            <div class="remember"><strong>Remember:</strong> NFAs are often smaller and easier to design, but they are no more powerful than DFAs. Both recognize exactly the regular languages.</div>
+          </section>
+
+          <section class="topic" id="enfa">
+            <h2>Epsilon-NFA (ε-NFA)</h2>
+            <p>An ε-NFA adds <strong>ε-transitions</strong>, moves that happen without consuming any input symbol. The <strong>ε-closure</strong> of a state is the set of states reachable from it using only ε-transitions (including itself). ε-NFAs make it easy to combine machines, which is why Thompson's construction uses them.</p>
+          </section>
+
+          <section class="topic" id="regex">
+            <h2>Regular expressions</h2>
+            <p>A <strong>regular expression</strong> describes a language using a compact pattern.</p>
+            <div class="table-wrap"><table>
+              <tr><th>Pattern</th><th>Meaning</th><th>Example</th></tr>
+              <tr><td>a</td><td>The symbol a</td><td>a</td></tr>
+              <tr><td>R1 | R2 (or R1 + R2)</td><td>Union: R1 or R2</td><td>a|b matches a or b</td></tr>
+              <tr><td>R1 R2</td><td>Concatenation: R1 then R2</td><td>ab matches ab</td></tr>
+              <tr><td>R*</td><td>Kleene star: zero or more of R</td><td>a* matches ε, a, aa, ...</td></tr>
+              <tr><td>ε</td><td>The empty string</td><td></td></tr>
+            </table></div>
+            <div class="example"><strong>Examples:</strong> 1(0|1)* means binary strings that start with 1. (a|b)*abb means strings over {a,b} that end with abb.</div>
+          </section>
+
+          <section class="topic" id="thompson">
+            <h2>Thompson's construction</h2>
+            <p>An algorithm that builds an <strong>ε-NFA from a regular expression</strong> by combining small pieces, each with one start state and one accepting state:</p>
+            <ul>
+              <li><strong>Single symbol a:</strong> start state, a-transition, accepting state.</li>
+              <li><strong>Union (R1|R2):</strong> a new start state with ε-moves into both machines, and both end in a new accepting state through ε-moves.</li>
+              <li><strong>Concatenation (R1R2):</strong> connect the accepting state of R1 to the start state of R2 with an ε-move.</li>
+              <li><strong>Star (R*):</strong> add ε-moves that allow skipping the machine or repeating it.</li>
+            </ul>
+          </section>
+
+          <section class="topic" id="conversion">
+            <h2>DFA and NFA conversion</h2>
+            <p>Every NFA has an equivalent DFA. The <strong>subset construction</strong> does the conversion:</p>
+            <ol>
+              <li>The DFA start state is the ε-closure of the NFA start state.</li>
+              <li>For each DFA state (a set of NFA states) and each symbol, collect all NFA states reachable on that symbol, then take the ε-closure.</li>
+              <li>Repeat until no new sets appear.</li>
+              <li>Any DFA state containing an NFA accepting state is accepting.</li>
+            </ol>
+            <div class="remember"><strong>Remember:</strong> An NFA with n states may need up to 2<sup>n</sup> DFA states in the worst case.</div>
+          </section>
+
+          <section class="topic" id="diagrams">
+            <h2>Transition diagrams and transition tables</h2>
+            <p>A <strong>transition diagram</strong> draws states as circles, transitions as labeled arrows, the start state with an incoming arrow, and accepting states as double circles. A <strong>transition table</strong> shows the same information in rows and columns.</p>
+            <p>DFA for "ends with 1" as a table (→ marks the start state, * marks accepting):</p>
+            <div class="table-wrap"><table>
+              <tr><th>State</th><th>On 0</th><th>On 1</th></tr>
+              <tr><td>→ q0</td><td>q0</td><td>q1</td></tr>
+              <tr><td>* q1</td><td>q0</td><td>q1</td></tr>
+            </table></div>
+            <p>Trace of the string 101: q0 →(1) q1 →(0) q0 →(1) q1. It ends in the accepting state q1, so 101 is accepted.</p>
+          </section>
+        </div>
+      </div>
+      <div class="container">
+        <div class="action-bar">
+          <p><strong>Ready to test yourself?</strong> The quiz has <span id="total-questions">20</span> multiple-choice questions. Answers are shown only after you submit.</p>
+          <div class="btn-row">
+            <button type="button" class="btn btn-primary" id="take-quiz-btn">Take Quiz</button>
+            <a class="btn btn-secondary" href="index.html#subjects">Back to Subjects</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= QUIZ ================= -->
+    <section id="quiz-view" class="hidden">
+      <div class="container">
+        <div class="panel">
+          <h2 data-focus>Automata Theory and Formal Languages Quiz</h2>
+          <div class="quiz-top">
+            <span class="counter" id="q-counter">Question 1</span>
+            <span class="answered" id="q-answered"></span>
+          </div>
+          <div class="progress" id="progress" role="progressbar" aria-label="Quiz progress" aria-valuemin="1" aria-valuenow="1">
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+
+          <p class="question-text" id="q-text"></p>
+          <div class="choices" id="choices" role="radiogroup" aria-label="Answer choices"></div>
+
+          <div class="quiz-nav">
+            <button type="button" class="btn btn-secondary" id="prev-btn">Previous</button>
+            <button type="button" class="btn btn-secondary" id="next-btn">Next</button>
+            <button type="button" class="btn btn-primary" id="submit-btn">Submit Quiz</button>
+          </div>
+
+          <div class="dots" id="dots" aria-label="Question navigator"></div>
+          <p class="section-sub" style="margin-top:1rem;margin-bottom:0">Tip: press A, B, C, or D to answer, and the left and right arrow keys to move between questions.</p>
+          <div class="btn-row" style="margin-top:1rem">
+            <button type="button" class="btn btn-secondary" id="quiz-exit-btn">Back to Reviewer</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RESULTS ================= -->
+    <section id="results-view" class="hidden">
+      <div class="container">
+        <div class="panel">
+          <h2 data-focus>Quiz results: <span id="res-subject"></span></h2>
+          <div class="score-hero">
+            <div class="pct" id="res-pct">0%</div>
+            <div class="msg" id="res-msg"></div>
+          </div>
+          <div class="stat-grid">
+            <div class="stat"><strong id="res-total">0</strong><span>Total questions</span></div>
+            <div class="stat good"><strong id="res-correct">0</strong><span>Correct</span></div>
+            <div class="stat bad"><strong id="res-incorrect">0</strong><span>Incorrect</span></div>
+            <div class="stat"><strong id="res-unanswered">0</strong><span>Unanswered</span></div>
+            <div class="stat"><strong id="res-score">0</strong><span>Final score</span></div>
+          </div>
+          <p class="section-sub" id="res-formula"></p>
+          <div class="server-note hidden" id="server-note"></div>
+          <div class="btn-row" style="margin-top:1rem">
+            <button type="button" class="btn btn-primary" id="retake-btn">Retake Quiz</button>
+            <button type="button" class="btn btn-secondary" id="back-to-reviewer-btn">Back to Reviewer</button>
+            <a class="btn btn-secondary" href="index.html#subjects">Back to Subjects</a>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Review your answers</h2>
+          <p class="section-sub">Green means correct, red means incorrect, and yellow means you left it blank.</p>
+          <div id="review-list"></div>
+          <div class="btn-row">
+            <button type="button" class="btn btn-primary" data-action="take-quiz">Retake Quiz</button>
+            <a class="btn btn-secondary" href="index.html">Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title">
+    <h2 id="confirm-title">Submit your quiz?</h2>
+    <p id="confirm-warning" class="warn hidden"></p>
+    <p>After you submit, you will see your score and the correct answers. You will not be able to change your answers.</p>
+    <div class="btn-row">
+      <button type="button" class="btn btn-primary" id="confirm-yes">Submit Quiz</button>
+      <button type="button" class="btn btn-secondary" id="confirm-no">Keep Reviewing</button>
+    </div>
+  </dialog>
+
+  <footer>College Quiz Reviewer &middot; Application Development Project</footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/questions.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
